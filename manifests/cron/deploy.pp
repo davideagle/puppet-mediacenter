@@ -35,7 +35,7 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class wowza::cron::deploy {
+class mediacenter::cron::deploy {
   cron::job { 'r10k_every5min':
     minute      => '*/5',
     user        => 'root',
