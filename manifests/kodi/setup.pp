@@ -7,7 +7,7 @@ class mediacenter::kodi::setup {
     ensure  => present,
     uid     => '420',
     groups  => ['audio','video'],
-    shell   => '/usr/bin/nologin kodi'
+    #shell   => '/usr/bin/nologin kodi'
   }
 
 }
