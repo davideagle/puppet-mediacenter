@@ -12,4 +12,4 @@ mod "puppetlabs-apt", "4.5.1"
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
 mod "mediacenter",
-  :git => "https://github.com/davideagle/mediacenter.git"
+  :git => "https://github.com/davideagle/puppet-mediacenter.git"
