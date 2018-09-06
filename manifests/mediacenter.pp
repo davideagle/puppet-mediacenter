@@ -1,3 +1,3 @@
 node default {
-  include mediacenter::kodi::setup
+  include ::mediacenter::kodi::setup
 }
