@@ -8,6 +8,8 @@ mod "puppet/staging"
 mod 'puppet-logrotate'
 mod "puppet/nginx"
 mod "puppetlabs-apt", "4.5.1"
+mod 'puppet-download_file', '3.1.0'
+mod 'puppet-wget', '2.0.0'
 
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
