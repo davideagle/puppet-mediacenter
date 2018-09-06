@@ -6,7 +6,7 @@ class mediacenter::kodi::setup {
     home    => '/var/lib/kodi',
     ensure  => present,
     uid     => '420',
-    groups  => ['audio','video']
+    groups  => ['audio','video'],
     shell   => '/usr/bin/nologin kodi'
   }
 
