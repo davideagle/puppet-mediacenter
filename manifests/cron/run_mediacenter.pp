@@ -35,10 +35,10 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class wowza::cron::run_wowza_server {
+class mediacenter::cron::run_mediacenter {
   cron::job { 'puppetrun_every5min':
     minute  => '*/5',
     user    => 'root',
-    command => "sleep `perl -e 'print int(rand(300));'` && puppet apply --logdest syslog /etc/puppet/modules/${module_name}/manifests/wowza_server.pp",
+    command => "sleep `perl -e 'print int(rand(300));'` && puppet apply --logdest syslog /home/vagrant/puppet-mediacenter/${module_name}/manifests/mediacenter.pp",
   }
 }
