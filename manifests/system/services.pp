@@ -6,4 +6,8 @@ class mediacenter::system::services {
     hasstatus  => true,
     provider   => 'systemd',
   }
+
+  file{ '/usr/lib/systemd/system/kodi.service':
+    source => "puppet:///modules/${module_name}/docker/config.json"
+  }
 }
