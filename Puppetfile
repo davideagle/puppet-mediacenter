@@ -10,6 +10,7 @@ mod "puppet/nginx"
 mod "puppetlabs-apt", "4.5.1"
 mod 'puppet-download_file', '3.1.0'
 mod 'puppet-wget', '2.0.0'
+mod 'puppetlabs-powershell', '2.1.5'
 
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
