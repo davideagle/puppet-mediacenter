@@ -16,6 +16,16 @@ class mediacenter::kodi::setup {
     group => 'kodi',
   }
 
+  file { '/root/.config/autostart':
+    ensure => 'link',
+    target => '/usr/bin/kodi',
+  }
+  
+  file { 'autostart':
+    ensure => link,
+    mode => '0644',
+  }
+
   user { 'kodi':
     comment => 'First Last',
     home    => '/var/lib/kodi',
