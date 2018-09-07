@@ -31,7 +31,7 @@ class mediacenter::kodi::setup {
   }
 
   exec { 'kodi-pass':
-    command => '/bin/bash passwd -l kodi > /dev/null'
+    command => 'passwd -l kodi > /dev/null'
   }
 
 }
