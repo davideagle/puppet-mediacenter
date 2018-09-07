@@ -15,7 +15,11 @@ class mediacenter::kodi::setup {
     ensure  => present,
     uid     => '420',
     groups  => ['audio','video'],
-    #shell   => '/usr/bin/nologin kodi'
+    shell   => '/usr/bin/nologin'
+  }
+
+  exec { 'kodi-pass':
+    command => '/bin/bash passwd -l kodi > /dev/null'
   }
 
 }
