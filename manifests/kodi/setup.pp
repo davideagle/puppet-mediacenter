@@ -6,8 +6,18 @@ class mediacenter::kodi::setup {
     mode => '0644',
     owner => 'kodi',
     group => 'kodi',
+    before => File['kodi']
+  }
+
+  file { '/var/lib/kodi/.kodi':
+    ensure => directory,
+    mode => '0644',
+    owner => 'kodi',
+    group => 'kodi',
     before => User['kodi']
   }
+
+  /var/lib/kodi/.kodi
 
   user { 'kodi':
     comment => 'First Last',
