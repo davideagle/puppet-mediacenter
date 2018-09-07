@@ -17,8 +17,6 @@ class mediacenter::kodi::setup {
     before => User['kodi']
   }
 
-  /var/lib/kodi/.kodi
-
   user { 'kodi':
     comment => 'First Last',
     home    => '/var/lib/kodi',
