@@ -17,3 +17,4 @@ class mediacenter::system::packages {
   package { 'xserver-common':
     ensure => installed,
   }
+}
