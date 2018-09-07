@@ -8,6 +8,6 @@ class mediacenter::system::services {
   }
 
   file{ '/usr/lib/systemd/system/kodi.service':
-    source => "puppet:///modules/${module_name}/docker/config.json"
+    source => "puppet:///modules/${module_name}/kodi/service.conf"
   }
 }
