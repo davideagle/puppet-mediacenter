@@ -5,7 +5,7 @@ class mediacenter::kodi::setup {
     ensure => directory,
     mode => '0644',
     owner => 'kodi',
-    group => 'kodi'
+    group => 'kodi',
     before => User['kodi']
   }
 
