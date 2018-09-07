@@ -6,7 +6,7 @@ class mediacenter::kodi::setup {
     mode => '0644',
     owner => 'kodi',
     group => 'kodi',
-    before => File['kodi']
+    before => File['/var/lib/kodi/.kodi']
   }
 
   file { '/var/lib/kodi/.kodi':
@@ -14,7 +14,7 @@ class mediacenter::kodi::setup {
     mode => '0644',
     owner => 'kodi',
     group => 'kodi',
-    before => User['/var/lib/kodi']
+    before => User['kodi']
   }
 
   user { 'kodi':
