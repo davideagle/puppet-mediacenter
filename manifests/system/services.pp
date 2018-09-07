@@ -7,7 +7,7 @@ class mediacenter::system::services {
     provider   => 'systemd',
   }
 
-  file{ '/usr/lib/systemd/system/kodi.service':
+  file{ '/lib/systemd/system/kodi.service':
     source => "puppet:///modules/${module_name}/kodi/service.conf"
     before => Service['kodi']
   }
