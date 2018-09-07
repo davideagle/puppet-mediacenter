@@ -20,11 +20,6 @@ class mediacenter::kodi::setup {
     ensure => 'link',
     target => '/usr/bin/kodi',
   }
-  
-  file { 'autostart':
-    ensure => link,
-    mode => '0644',
-  }
 
   user { 'kodi':
     comment => 'First Last',
