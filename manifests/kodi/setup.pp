@@ -14,7 +14,7 @@ class mediacenter::kodi::setup {
     mode => '0644',
     owner => 'kodi',
     group => 'kodi',
-    before => User['kodi']
+    before => User['/var/lib/kodi']
   }
 
   user { 'kodi':
