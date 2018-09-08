@@ -8,7 +8,7 @@ class mediacenter::sonarr::setup {
 
   class { 'sonarr':
     package_ensure => present,
-    service_name   => 'sonarr'
+    service_name   => 'sonarr',
     service_enable => true,
     service_ensure => true,
     service_manage => true,
