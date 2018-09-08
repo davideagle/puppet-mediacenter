@@ -1,4 +1,18 @@
 class mediacenter::sonarr::setup {
 
-  class { 'sonarr': }
+  user { 'sonarr':
+    comment => 'sonarr',
+    home => '/home/sonarr',
+    ensure => present,
+  }
+
+  class { 'sonarr':
+    package_ensure => present,
+    service_name   => 'sonarr'
+    service_enable => true,
+    service_ensure => true,
+    service_manage => true,
+    user           => 'sonarr'
+    group          => 'sonarr'
+  }
 }
