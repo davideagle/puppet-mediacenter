@@ -40,6 +40,6 @@ class mediacenter::cron::deploy {
     minute      => '*/5',
     user        => 'root',
     command     => 'cd /etc/puppet/code/ && r10k puppetfile install -v debug 2>&1 | logger',
-    environment => ['PATH="/usr/local/bin/:/usr/bin/"',
+    environment => ['PATH="/usr/local/bin/:/usr/bin/"'],
   }
 }
