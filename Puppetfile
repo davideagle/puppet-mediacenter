@@ -12,5 +12,7 @@ mod 'puppet-cron', '1.3.0'
 
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
+mod "sickbeard",
+  :git => "https://github.com/DexterTheDragon/puppet-sickbeard.git"
 mod "mediacenter",
   :git => "https://github.com/davideagle/puppet-mediacenter.git"
