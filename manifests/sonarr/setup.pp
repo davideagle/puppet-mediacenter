@@ -12,7 +12,7 @@ class mediacenter::sonarr::setup {
     service_enable => true,
     service_ensure => true,
     service_manage => true,
-    user           => 'sonarr'
+    user           => 'sonarr',
     group          => 'sonarr'
   }
 }
