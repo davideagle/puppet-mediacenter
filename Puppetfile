@@ -13,7 +13,7 @@ mod 'puppetlabs-vcsrepo', '2.3.0'
 
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
-mod "sickbeard",
-  :git => "https://github.com/DexterTheDragon/puppet-sickbeard.git"
+mod "sonarr",
+  :git => "https://github.com/MacLeodMike/puppet-sonarr.git"
 mod "mediacenter",
   :git => "https://github.com/davideagle/puppet-mediacenter.git"
