@@ -15,16 +15,5 @@ class mediacenter::sonarr::setup {
     user           => 'sonarr',
     group          => 'sonarr'
   }
-  #sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 0xFDA5DFFC
-  #sudo echo "deb http://apt.sonarr.tv/ master main" | sudo tee /etc/apt/sources.list.d/sonarr.list
-  apt::source { 'sonarr-test':
-   location => 'http://apt.sonarr.tv/',
-   release  => '',
-   repos    => 'main',
-   key      => {
-     'id'     => 'FDA5DFFC',
-     'server' => 'keyserver.ubuntu.com',
-   },
- }
 
 }

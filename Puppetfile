@@ -16,6 +16,6 @@ mod 'camptocamp/systemd', '2.1.0'
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
 mod "sonarr",
-  :git => "https://github.com/MacLeodMike/puppet-sonarr.git"
+  :git => "https://github.com/davideagle/puppet-sonarr.git"
 mod "mediacenter",
   :git => "https://github.com/davideagle/puppet-mediacenter.git"
