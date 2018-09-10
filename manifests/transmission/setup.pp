@@ -5,6 +5,6 @@ class mediacenter::system::transmission {
     rpc_password => '',
     rpc_port     => 8080,
     peer_port    => 54612,
-    encryption   => 2,
+    encryption   => 2
   }
 }
