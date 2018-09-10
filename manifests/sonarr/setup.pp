@@ -16,4 +16,8 @@ class mediacenter::sonarr::setup {
     group          => 'sonarr'
   }
 
+  package { 'libmono-cil-dev':
+    ensure => installed,
+  }
+
 }
