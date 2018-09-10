@@ -2,8 +2,15 @@ class mediacenter::sonarr::setup {
 
   user { 'sonarr':
     comment => 'sonarr',
-    home => '/home/sonarr',
-    ensure => present,
+    home    => '/home/sonarr',
+    ensure  => present,
+    before  => File['/home/sonarr']
+  }
+
+  file { '/home/sonarr':
+    ensure => directory,
+    mode   => '0600',
+    owner  => 'sonarr'
   }
 
   class { 'sonarr':
