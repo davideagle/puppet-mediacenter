@@ -5,4 +5,5 @@ node default {
   include ::mediacenter::system::packages
   include ::mediacenter::system::services
   include ::mediacenter::sonarr::setup
+  include ::mediacenter::transmission::setup
 }
