@@ -22,7 +22,7 @@ class mediacenter::jacket::setup {
       'id'     => '3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF',
       'server' => 'keyserver.ubuntu.com',
     },
-    before   => package['mono-devel'],
+    before   => Package['mono-devel'],
   }
 
   package { 'mono-devel':
