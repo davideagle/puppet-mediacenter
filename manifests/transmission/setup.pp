@@ -1,4 +1,4 @@
-class mediacenter::system::services {
+class mediacenter::system::transmission {
 
   class { 'transmission':
     rpc_username => 'rpcuser',
