@@ -12,6 +12,7 @@ mod 'puppet/cron', '1.2.0'
 mod 'puppetlabs/vcsrepo', '2.3.0'
 
 mod 'camptocamp/systemd', '2.1.0'
+mod 'CraigWatson1987/transmission', '2.2.1'
 
 mod "kodi",
   :git => "https://github.com/davideagle/dermac-kodi.git"
