@@ -5,11 +5,11 @@ class mediacenter::jacket::setup {
 
   docker::image { 'ubuntu':
     ensure    => 'present',
-    image_tag => 'linuxserver/jackett'
+    image_tag => 'linuxserver/jackett:latest'
   }
 
   docker::run { 'jackett':
-    image  => 'linuxserver/jackett',
+    image  => 'linuxserver/jackett:latest',
     expose => ['9117:9117'],
     volumes => [
                 'my-volume:/var/log',
@@ -22,13 +22,6 @@ class mediacenter::jacket::setup {
   file { '/opt/jackett':
     ensure => directory,
     mode => '0644',
-  }
-
-
-  vcsrepo { '/opt/jacket':
-    ensure   => present,
-    provider => git,
-    source   => 'git://github.com/Jackett/Jackett.git',
   }
 
 
