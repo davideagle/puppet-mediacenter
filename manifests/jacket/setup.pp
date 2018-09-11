@@ -11,16 +11,27 @@ class mediacenter::jacket::setup {
   docker::run { 'jackett':
     image  => 'linuxserver/jackett:latest',
     expose => ['9117'],
+    port
     volumes => [
-                'my-volume:/var/log',
                 '/etc/localtime:/etc/localtime:ro',
-                '/opt/jackett:/config',
-                '/opt/jackett:/downloads'
+                '/opt/jackett/downloads:/config',
+                '/opt/jackett/config:/downloads'
                 ],
+    env     => ['PGID=1001', 'PUID=1001']
   }
 
   file { '/opt/jackett':
     ensure => directory,
+    mode => '0644',
+  }->
+
+  file { '/opt/jackett/downloads':
+    ensure => file,
+    mode => '0644',
+  }->
+
+  file { '/opt/jackett/config':
+    ensure => file,
     mode => '0644',
   }
 
