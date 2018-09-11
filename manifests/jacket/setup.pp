@@ -3,9 +3,9 @@
 class mediacenter::jacket::setup {
   include ::docker
 
-  docker::image { 'ubuntu':
+  docker::image { 'linuxserver/jackett':
     ensure    => 'present',
-    image_tag => 'linuxserver/jackett:latest'
+    image_tag => 'latest'
   }
 
   docker::run { 'jackett':
