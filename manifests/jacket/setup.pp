@@ -8,7 +8,7 @@ class mediacenter::jacket::setup {
     image_tag => 'linuxserver/jackett'
   }
 
-  docker::run { 'jackett'
+  docker::run { 'jackett':
     image  => 'linuxserver/jackett',
     expose => ['9117:9117'],
     volumes => [
