@@ -42,8 +42,4 @@ class mediacenter::sonarr::setup {
     before   => Package['mono-devel'],
   }
 
-  package { 'mono-devel':
-    ensure => installed,
-  }
-
 }
