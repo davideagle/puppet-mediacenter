@@ -1,31 +1,36 @@
 # == Class: mediacenter::jacket::setup
 #
 class mediacenter::jacket::setup {
+  include ::docker
+
+  docker::image { 'ubuntu':
+    ensure    => 'present',
+    image_tag => 'linuxserver/jackett'
+  }
+
+  docker::run { 'jackett'
+    image  => 'linuxserver/jackett',
+    expose => ['9117:9117'],
+    volumes => [
+                'my-volume:/var/log',
+                '/etc/localtime:/etc/localtime:ro',
+                '/opt/jackett:/config',
+                '/opt/jackett:/downloads'
+                ],
+  }
+
+  file { '/opt/jackett':
+    ensure => directory,
+    mode => '0644',
+  }
+
+
   vcsrepo { '/opt/jacket':
     ensure   => present,
     provider => git,
     source   => 'git://github.com/Jackett/Jackett.git',
   }
 
-  package { 'nuget':
-    ensure => installed,
-  }
-  package { 'libmono-addins-msbuild-cil-dev':
-    ensure => installed,
-  }
 
-  include ::apt
-  apt::source { 'mono-official':
-    location => 'https://download.mono-project.com/repo/ubuntu',
-    repos    => 'main',
-    key      => {
-      'id'     => '3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF',
-      'server' => 'keyserver.ubuntu.com',
-    },
-    before   => Package['mono-devel'],
-  }
 
-  package { 'mono-devel':
-    ensure => installed,
-  }
 }

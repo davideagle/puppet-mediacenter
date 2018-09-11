@@ -27,4 +27,23 @@ class mediacenter::sonarr::setup {
     ensure => installed,
   }
 
+  package { 'mono-devel':
+    ensure => installed,
+  }
+
+  include ::apt
+  apt::source { 'mono-official':
+    location => 'https://download.mono-project.com/repo/ubuntu',
+    repos    => 'main',
+    key      => {
+      'id'     => '3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF',
+      'server' => 'keyserver.ubuntu.com',
+    },
+    before   => Package['mono-devel'],
+  }
+
+  package { 'mono-devel':
+    ensure => installed,
+  }
+
 }
