@@ -10,7 +10,7 @@ class mediacenter::jacket::setup {
 
   docker::run { 'jackett':
     image  => 'linuxserver/jackett:latest',
-    expose => ['9117:9117'],
+    expose => ['9117'],
     volumes => [
                 'my-volume:/var/log',
                 '/etc/localtime:/etc/localtime:ro',
