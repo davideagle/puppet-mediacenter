@@ -11,6 +11,7 @@ class mediacenter::jacket::setup {
   docker::run { 'jackett':
     image  => 'linuxserver/jackett:latest',
     expose => ['9117'],
+    ports  => ['9117'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/jackett/downloads:/config',
