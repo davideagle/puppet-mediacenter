@@ -26,12 +26,12 @@ class mediacenter::jacket::setup {
   }->
 
   file { '/opt/jackett/downloads':
-    ensure => file,
+    ensure => directory,
     mode => '0644',
   }->
 
   file { '/opt/jackett/config':
-    ensure => file,
+    ensure => directory,
     mode => '0644',
   }
 
