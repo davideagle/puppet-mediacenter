@@ -14,8 +14,8 @@ class mediacenter::jacket::setup {
     ports  => ['9117:9117'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
-                '/opt/jackett/downloads:/config',
-                '/opt/jackett/config:/downloads'
+                '/opt/jackett/config:/config',
+                '/opt/jackett/downloads:/downloads'
                 ],
     env     => ['PGID=1001', 'PUID=1001']
   }
