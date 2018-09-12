@@ -20,6 +20,16 @@ class mediacenter::jacket::setup {
     env     => ['PGID=1001', 'PUID=1001']
   }
 
+  # docker create \
+  # --name=jackett \
+  # -v <path to data>:/config \
+  # -v <path to blackhole>:/downloads \
+  # -e PGID=<gid> -e PUID=<uid> \
+  # -e TZ=<timezone> \
+  # -v /etc/localtime:/etc/localtime:ro \
+  # -p 9117:9117 \
+  # linuxserver/jackett
+
   file { '/opt/jackett':
     ensure => directory,
     mode => '0644',

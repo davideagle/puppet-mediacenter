@@ -11,21 +11,31 @@ class mediacenter::transmission::setup {
     image   => 'linuxserver/transmission:latest',
     expose  => ['9091','51413'],
     ports   => ['9091:9091','51413:51413','51413:51413/udp'],
+    env     => ['PGID=1001', 'PUID=1001']
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
-                '/opt/sonarr/config:/config',
-                '/opt/sonarr/downloads:/downloads',
-                '/opt/sonarr/downloads/tv:/tv',
+                '/opt/transmission/config:/config',
+                '/opt/transmission/downloads:/downloads',
+                '/opt/transmission/downloads/watch:/watch',
                 ],
 
   }
-  # docker create --name=transmission \
-  # -v <path to data>:/config \
-  # -v <path to downloads>:/downloads \
-  # -v <path to watch folder>:/watch \
-  # -e PGID=<gid> -e PUID=<uid> \
-  # -e TZ=<timezone> \
-  # -p 9091:9091 -p 51413:51413 \
-  # -p 51413:51413/udp \
-  # linuxserver/transmission
+
+  file { '/opt/transmission':
+    ensure => directory,
+    mode => '0644',
+  } ->
+  file { '/opt/transmission/config':
+    ensure => directory,
+    mode => '0644',
+  } ->
+  file { '/opt/transmission/downloads':
+    ensure => directory,
+    mode => '0644',
+  } ->
+  file { '/opt/transmission/watch':
+    ensure => directory,
+    mode => '0644',
+  }
+
 }
