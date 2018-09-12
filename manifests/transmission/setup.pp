@@ -9,7 +9,8 @@ class mediacenter::transmission::setup {
 
   docker::run { 'transmission':
     image   => 'linuxserver/transmission:latest',
-    expose  => ['8989'],
+    expose  => ['9091','51413'],
+    ports   => ['9091:9091','51413:51413','51413:51413/udp'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/sonarr/config:/config',

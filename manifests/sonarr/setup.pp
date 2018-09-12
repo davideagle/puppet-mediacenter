@@ -10,6 +10,7 @@ class mediacenter::sonarr::setup {
   docker::run { 'sonarr':
     image   => 'linuxserver/sonarr:latest',
     expose  => ['8989'],
+    ports   => ['8989:8989'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/sonarr/config:/config',
