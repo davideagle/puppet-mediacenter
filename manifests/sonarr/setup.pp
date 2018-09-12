@@ -17,6 +17,7 @@ class mediacenter::sonarr::setup {
                 '/opt/sonarr/downloads:/downloads',
                 '/opt/sonarr/downloads/tv:/tv',
                 ],
+    env     => ['PGID=1001', 'PUID=1001']
 
   }
 
@@ -32,17 +33,22 @@ class mediacenter::sonarr::setup {
   #   -v <path/to/downloadclient-downloads>:/downloads \
   #   linuxserver/sonarr
 
-  user { 'sonarr':
-    comment => 'sonarr',
-    home    => '/home/sonarr',
-    ensure  => present,
-    before  => File['/home/sonarr']
-  }
 
-  file { '/home/sonarr':
+  file { '/opt/sonarr':
     ensure => directory,
-    mode   => '0600',
-    owner  => 'sonarr'
+    mode   => '0644'
+  } ->
+  file { '/opt/sonarr/config':
+    ensure => directory,
+    mode   => '0644'
+  } ->
+  file { '/opt/sonarr/downloads':
+    ensure => directory,
+    mode   => '0644'
+  } ->
+  file { '/opt/sonarr/tv':
+    ensure => directory,
+    mode   => '0644'
   }
 
 }
