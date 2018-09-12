@@ -15,7 +15,7 @@ class mediacenter::transmission::setup {
     image_tag => 'latest'
   }
 
-  docker::run { 'sonarr':
+  docker::run { 'transmission':
     image   => 'linuxserver/transmission:latest',
     expose  => ['8989'],
     volumes => [
