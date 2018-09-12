@@ -11,7 +11,7 @@ class mediacenter::transmission::setup {
     image   => 'linuxserver/transmission:latest',
     expose  => ['9091','51413'],
     ports   => ['9091:9091','51413:51413','51413:51413/udp'],
-    env     => ['PGID=1001', 'PUID=1001']
+    env     => ['PGID=1001', 'PUID=1001'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/transmission/config:/config',
