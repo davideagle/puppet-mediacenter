@@ -34,4 +34,14 @@ class mediacenter::kodi::setup {
     command => '/usr/bin/passwd -l kodi > /dev/null'
   }
 
+  file { '/media/tv':
+    ensure => file,
+    mode => '0644',
+  }
+
+  file { '/media/movies':
+    ensure => file,
+    mode => '0644',
+  }
+
 }
