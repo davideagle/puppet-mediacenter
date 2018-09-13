@@ -39,6 +39,6 @@ class mediacenter::cron::run_mediacenter {
   cron::job { 'puppetrun_every5min':
     minute  => '*/5',
     user    => 'root',
-    command => "sleep `perl -e 'print int(rand(300));'` && puppet apply --logdest syslog /etc/puppet/code/modules/${module_name}/manifests/mediacenter.pp",
+    command => "sleep `perl -e 'print int(rand(300));'` && puppet apply --logdest syslog /etc/puppet/modules/${module_name}/manifests/mediacenter.pp",
   }
 }
