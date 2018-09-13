@@ -15,7 +15,7 @@ class mediacenter::sonarr::setup {
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/sonarr/config:/config',
                 '/opt/sonarr/downloads:/downloads',
-                '/opt/sonarr/downloads/tv:/tv',
+                '/media/tv:/tv',
                 ],
     env     => ['PGID=1001', 'PUID=1001']
 
@@ -43,10 +43,6 @@ class mediacenter::sonarr::setup {
     mode   => '0644'
   } ->
   file { '/opt/sonarr/downloads':
-    ensure => directory,
-    mode   => '0644'
-  } ->
-  file { '/opt/sonarr/tv':
     ensure => directory,
     mode   => '0644'
   }
