@@ -39,7 +39,7 @@ class mediacenter::cron::deploy {
   cron::job { 'r10k_every5min':
     minute      => '*/5',
     user        => 'root',
-    command     => 'cd /etc/puppet/code/ && r10k puppetfile install -v debug 2>&1 | logger',
+    command     => 'cd /etc/puppet && r10k puppetfile install -v debug 2>&1 | logger',
     environment => ['PATH="/usr/local/bin/:/usr/bin/"'],
   }
 }
