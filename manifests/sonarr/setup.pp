@@ -17,22 +17,9 @@ class mediacenter::sonarr::setup {
                 '/opt/sonarr/downloads:/downloads',
                 '/media/tv:/tv',
                 ],
-    env     => ['PGID=1001', 'PUID=1001']
+    env     => ['PGID=0', 'PUID=0']
 
   }
-
-
-  # docker create \
-  #   --name sonarr \
-  #   -p 8989:8989 \
-  #   -e PUID=<UID> -e PGID=<GID> \
-  #   -e TZ=<timezone> \
-  #   -v /etc/localtime:/etc/localtime:ro \
-  #   -v </path/to/appdata>:/config \
-  #   -v <path/to/tvseries>:/tv \
-  #   -v <path/to/downloadclient-downloads>:/downloads \
-  #   linuxserver/sonarr
-
 
   file { '/opt/sonarr':
     ensure => directory,

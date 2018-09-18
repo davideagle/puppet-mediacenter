@@ -17,7 +17,7 @@ class mediacenter::jacket::setup {
                 '/opt/jackett/config:/config',
                 '/opt/jackett/downloads:/downloads'
                 ],
-    env     => ['PGID=1001', 'PUID=1001']
+    env     => ['PGID=0', 'PUID=0']
   }
 
   # docker create \
