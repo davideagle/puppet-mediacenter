@@ -36,12 +36,12 @@ class mediacenter::kodi::setup {
 
   file { '/media/tv':
     ensure => directory,
-    mode => '0644',
+    mode => '0666',
   }
 
   file { '/media/movies':
     ensure => directory,
-    mode => '0644',
+    mode => '0666',
   }
 
 }
