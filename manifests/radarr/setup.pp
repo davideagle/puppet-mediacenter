@@ -9,8 +9,8 @@ class mediacenter::radarr::setup {
 
   docker::run { 'radarr':
     image   => 'linuxserver/radarr:latest',
-    expose  => ['8989'],
-    ports   => ['8989:8989'],
+    expose  => ['7878'],
+    ports   => ['7878:7878'],
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/radarr/config:/config',
