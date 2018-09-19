@@ -14,7 +14,7 @@ class mediacenter::sonarr::setup {
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/sonarr/config:/config',
-                '/opt/sonarr/downloads:/downloads',
+                '/opt/transmission/downloads:/downloads',
                 '/media/tv:/tv',
                 ],
     env     => ['PGID=0', 'PUID=0']
