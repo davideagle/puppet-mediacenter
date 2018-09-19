@@ -6,6 +6,7 @@ node default {
   include ::mediacenter::system::services
   include ::mediacenter::sonarr::setup
   include ::mediacenter::radarr::setup
+  include ::mediacenter::muximux::setup
   include ::mediacenter::transmission::setup
   include ::mediacenter::jacket::setup
 }
