@@ -15,7 +15,7 @@ class mediacenter::muximux::setup {
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/muximux/config:/config'
                 ],
-    env     => ['PGID=0', 'PUID=0']
+    env     => ['PGID=1000', 'PUID=1000']
 
   }
 
