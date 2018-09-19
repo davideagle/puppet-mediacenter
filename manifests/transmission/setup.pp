@@ -41,7 +41,7 @@ class mediacenter::transmission::setup {
   file { '/opt/transmission/config/settings.json.puppet':
     ensure  => file,
     mode    => '0600',
-    content => template('transmission/settings.json.erb'),
+    content => template("${module_name}/transmission/settings.json.erb")
     require => File['/opt/transmission/config'],
   }
 
