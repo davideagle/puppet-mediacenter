@@ -48,7 +48,7 @@ class mediacenter::jacket::setup {
   file { '/opt/jackett/config/Jackett':
     ensure => directory,
     mode => '0644',
-  }->
+  }
 
   # file { '/opt/jackett/config/Jackett/ServerConfig.json':
   #   ensure => file,
