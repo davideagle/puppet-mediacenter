@@ -32,16 +32,17 @@ class mediacenter::radarr::setup {
   file { '/opt/radarr/downloads':
     ensure => directory,
     mode   => '0644'
-  }->
-  file { '/opt/radarr/config/config.xml':
-    ensure => file,
-    mode => '0644',
-    content => template('sonarr/config.xml.erb')
-  }->
-  file { '/opt/radarr/config/settings.json':
-    ensure => file,
-    mode => '0644',
-    content => template('sonarr/settings.json.erb')
   }
+  #->
+  # file { '/opt/radarr/config/config.xml':
+  #   ensure => file,
+  #   mode => '0644',
+  #   content => template('sonarr/config.xml.erb')
+  # }->
+  # file { '/opt/radarr/config/settings.json':
+  #   ensure => file,
+  #   mode => '0644',
+  #   content => template('sonarr/settings.json.erb')
+  # }
 
 }
