@@ -50,11 +50,11 @@ class mediacenter::jacket::setup {
     mode => '0644',
   }->
 
-  file { '/opt/jackett/config/Jackett/ServerConfig.json':
-    ensure => file,
-    mode => '0644',
-    content => template('jackett/ServerConfig.json.erb')
-  }
+  # file { '/opt/jackett/config/Jackett/ServerConfig.json':
+  #   ensure => file,
+  #   mode => '0644',
+  #   content => template('jackett/ServerConfig.json.erb')
+  # }
 
 
 
