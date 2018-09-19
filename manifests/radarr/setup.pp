@@ -14,7 +14,7 @@ class mediacenter::radarr::setup {
     volumes => [
                 '/etc/localtime:/etc/localtime:ro',
                 '/opt/radarr/config:/config',
-                '/opt/radarr/downloads:/downloads',
+                '/opt/transmission/downloads:/downloads',
                 '/media/movies:/movies',
                 ],
     env     => ['PGID=0', 'PUID=0']
@@ -26,10 +26,6 @@ class mediacenter::radarr::setup {
     mode   => '0644'
   } ->
   file { '/opt/radarr/config':
-    ensure => directory,
-    mode   => '0644'
-  } ->
-  file { '/opt/radarr/downloads':
     ensure => directory,
     mode   => '0644'
   }
