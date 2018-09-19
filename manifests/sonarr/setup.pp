@@ -28,10 +28,6 @@ class mediacenter::sonarr::setup {
   file { '/opt/sonarr/config':
     ensure => directory,
     mode   => '0644'
-  } ->
-  file { '/opt/sonarr/downloads':
-    ensure => directory,
-    mode   => '0644'
   }
 
 }
