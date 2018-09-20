@@ -1,4 +1,9 @@
-class mediacenter::sonarr::setup {
+class mediacenter::sonarr::setup(
+  Integer                $port                 = 8989,
+  Integer                $ssl_port             = 9898,
+  Boolean                $ssl_port             = False,
+  String                 $api_key              = '704a2318431f49f99b76a6b260d554ca'
+) {
 
   include ::docker
 
@@ -28,6 +33,13 @@ class mediacenter::sonarr::setup {
   file { '/opt/sonarr/config':
     ensure => directory,
     mode   => '0644'
+  }
+
+  file { '/opt/sonarr/config/config.xml':
+    ensure  => file,
+    mode    => '0600',
+    content => template("${module_name}/transmission/config.xml.erb"),
+    require => File['/opt/sonarr/config'],
   }
 
 }
