@@ -12,6 +12,7 @@ class mediacenter::transmission::setup(
   String                 $blocklist_url                  = 'http://www.example.com/blocklist',
   Integer                $cache_size_mb                  = 4,
   Boolean                $dht_enabled                    = true,
+  String                 $download_root                  = ''
   String                 $download_dir                   = 'Downloads',
   Boolean                $download_queue_enabled         = true,
   Integer                $download_queue_size            = 5,
