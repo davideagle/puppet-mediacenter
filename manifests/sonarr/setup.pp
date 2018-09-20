@@ -1,8 +1,13 @@
 class mediacenter::sonarr::setup(
-  Integer                $port                 = 8989,
-  Integer                $ssl_port             = 9898,
-  Boolean                $ssl_port             = False,
-  String                 $api_key              = '704a2318431f49f99b76a6b260d554ca'
+  Integer                $port                  = 8989,
+  Integer                $ssl_port              = 9898,
+  Boolean                $enable_ssl            = False,
+  String                 $api_key               = '704a2318431f49f99b76a6b260d554ca',
+  String                 $authentication_method = 'None',
+  String                 $branch                = 'master',
+  String                 $launch_browser        = True,
+  String                 $update_mechanism      = 'BuiltIn',
+
 ) {
 
   include ::docker
