@@ -94,7 +94,7 @@
     "lazy-bitfield-enabled": <%= @lazy_bitfield_enabled %>,
     "lpd-enabled": <%= @lpd_enabled %>,
     "message-level": <%= @message_level %>,
-<% if @peer_congestion_algorithm'] -%>
+<% if @peer_congestion_algorithm -%>
     "peer-congestion-algorithm": "<%= @peer_congestion_algorithm %>",
 <% else -%>
     "peer-congestion-algorithm": "",
@@ -120,7 +120,7 @@
     "rpc-url": "<%= @rpc_url %>",
     "rpc-bind-address": "<%= @rpc_bind_address %>",
     "rpc-enabled": <%= @rpc_enabled %>,
-<% if @rpc_host_whitelist'] -%>
+<% if @rpc_host_whitelist -%>
     "rpc-host-whitelist": "<%= @rpc_host_whitelist %>",
 <% else -%>
     "rpc-host-whitelist": "",
@@ -133,7 +133,7 @@
     "rpc-whitelist-enabled": <%= @rpc_whitelist_enabled %>,
     "scrape-paused-torrents-enabled": <%= @scrape_paused_torrents_enabled %>,
     "script-torrent-done-enabled": <%= @script_torrent_done_enabled %>,
-<% if @script_torrent_done_filename'] -%>
+<% if @script_torrent_done_filename -%>
     "script-torrent-done-filename": "<%= @script_torrent_done_filename %>",
 <% else -%>
     "script-torrent-done-filename": "",
