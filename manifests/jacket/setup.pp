@@ -1,6 +1,23 @@
 # == Class: mediacenter::jacket::setup
 #
-class mediacenter::jacket::setup {
+class mediacenter::jacket::setup(
+  Integer                $port                 = 9117,
+  Boolean                $allow_external       = true,
+  String                 $api_key              = 'wapifjmpzaww0l7hyn0f891bkuvri2in',
+  String                 $admin_password       = 'null',
+  String                 $blackhole_dir        = '',
+  Boolean                $update_disabled      = false,
+  Boolean                $update_prerelease    = false,
+  String                 $base_path_override   = '',
+  String                 $omdb_api_key         = '421fe225',
+  String                 $omdb_api_url         = '',
+  String                 $proxy_url            = '',
+  Integer                $proxy_type           = 0,
+  Integer                $proxy_port           = Null,
+  String                 $proxy_username       = '',
+  String                 $proxy_password       = '',
+  Boolean                $proxy_is_anonymous   = true,
+  ) {
   include ::docker
 
   docker::image { 'linuxserver/jackett':
@@ -19,16 +36,6 @@ class mediacenter::jacket::setup {
                 ],
     env     => ['PGID=0', 'PUID=0']
   }
-
-  # docker create \
-  # --name=jackett \
-  # -v <path to data>:/config \
-  # -v <path to blackhole>:/downloads \
-  # -e PGID=<gid> -e PUID=<uid> \
-  # -e TZ=<timezone> \
-  # -v /etc/localtime:/etc/localtime:ro \
-  # -p 9117:9117 \
-  # linuxserver/jackett
 
   file { '/opt/jackett':
     ensure => directory,
@@ -50,11 +57,12 @@ class mediacenter::jacket::setup {
     mode => '0644',
   }
 
-  # file { '/opt/jackett/config/Jackett/ServerConfig.json':
-  #   ensure => file,
-  #   mode => '0644',
-  #   content => template('jackett/ServerConfig.json.erb')
-  # }
+  file { '/opt/jackett/config/Jackett/ServerConfig.json':
+    ensure => file,
+    mode => '0644',
+    content => template("${module_name}/jackett/ServerConfig.json.erb")
+    require => File['/opt/jackett/config/Jackett'],
+  }
 
 
 
