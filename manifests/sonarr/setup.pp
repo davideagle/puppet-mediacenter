@@ -1,11 +1,11 @@
 class mediacenter::sonarr::setup(
   Integer                $port                  = 8989,
   Integer                $ssl_port              = 9898,
-  Boolean                $enable_ssl            = False,
+  Boolean                $enable_ssl            = false,
   String                 $api_key               = '704a2318431f49f99b76a6b260d554ca',
   String                 $authentication_method = 'None',
   String                 $branch                = 'master',
-  String                 $launch_browser        = True,
+  String                 $launch_browser        = true,
   String                 $update_mechanism      = 'BuiltIn',
 
 ) {
