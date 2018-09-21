@@ -60,14 +60,14 @@ class mediacenter::jacket::setup(
   file { '/opt/jackett/config/Jackett/ServerConfig.json':
     ensure  => file,
     mode    => '0644',
-    content => template("${module_name}/jackett/ServerConfig.json.erb")
+    content => template("${module_name}/jackett/ServerConfig.json.erb"),
     require => File['/opt/jackett/config/Jackett'],
   }
 
   file { '/opt/jackett/config/Jackett/Indexers':
     ensure  => directory,
     mode    => '0644',
-    recurse => true
+    recurse => true,
     source  => "puppet:///modules/${module_name}/Jackett/config/Jackett/Indexers",
   }
 
