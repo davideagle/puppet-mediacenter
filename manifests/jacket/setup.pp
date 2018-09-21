@@ -13,7 +13,7 @@ class mediacenter::jacket::setup(
   String                 $omdb_api_url         = '',
   String                 $proxy_url            = '',
   Integer                $proxy_type           = 0,
-  Integer                $proxy_port           = Null,
+  String                 $proxy_port           = 'Null',
   String                 $proxy_username       = '',
   String                 $proxy_password       = '',
   Boolean                $proxy_is_anonymous   = true,
