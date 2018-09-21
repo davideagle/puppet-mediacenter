@@ -29,7 +29,7 @@ class mediacenter::muximux::setup {
   }
 
   file { '/opt/muximux/config/www/muximux/settings.ini.php.tmp':
-    ensure  => directory,
+    ensure  => file,
     mode    => '0644',
     content => template("${module_name}/muximux/settings.ini.php.erb"),
     require => File['/opt/muximux/config'],
