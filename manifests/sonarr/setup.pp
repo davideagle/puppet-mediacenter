@@ -5,7 +5,7 @@ class mediacenter::sonarr::setup(
   String                 $api_key               = '704a2318431f49f99b76a6b260d554ca',
   String                 $authentication_method = 'None',
   String                 $branch                = 'master',
-  String                 $launch_browser        = true,
+  Boolean                $launch_browser        = true,
   String                 $update_mechanism      = 'BuiltIn',
 
 ) {
