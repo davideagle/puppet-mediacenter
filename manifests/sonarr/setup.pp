@@ -42,7 +42,7 @@ class mediacenter::sonarr::setup(
 
   file { '/opt/sonarr/config/config.xml':
     ensure  => file,
-    mode    => '0600',
+    mode    => '0644',
     content => template("${module_name}/sonarr/config.xml.erb"),
     require => File['/opt/sonarr/config'],
   }

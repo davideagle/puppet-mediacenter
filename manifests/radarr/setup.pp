@@ -1,4 +1,17 @@
-class mediacenter::radarr::setup {
+class mediacenter::radarr::setup(
+  String                $log_level                 = 'Info',
+  Integer               $port                      = 7878,
+  String                $url_base                  = '',
+  String                $bind_address              = '*',
+  Integer               $ssl_port                  = 9898,
+  Bolean                $enable_ssl                = false,
+  String                $api_key                   = '746d1069cd3d4358bd3a1c97145535bd',
+  String                $authentication_method     = 'None',
+  String                $branch                    = 'Develop',
+  Boolean               $launch_browser            = true,
+  String                $ssl_cert_hash             = '',
+  String                $update_mechanism          = 'BuiltIn'
+  ) {
 
   include ::docker
 
@@ -29,16 +42,12 @@ class mediacenter::radarr::setup {
     ensure => directory,
     mode   => '0644'
   }
-  #->
-  # file { '/opt/radarr/config/config.xml':
-  #   ensure => file,
-  #   mode => '0644',
-  #   content => template('sonarr/config.xml.erb')
-  # }->
-  # file { '/opt/radarr/config/settings.json':
-  #   ensure => file,
-  #   mode => '0644',
-  #   content => template('sonarr/settings.json.erb')
-  # }
+
+  file { '/opt/radarr/config/config.xml':
+    ensure  => file,
+    mode    => '0644',
+    content => template("${module_name}/radarr/config.xml.erb"),
+    require => File['/opt/radarr/config'],
+  }
 
 }
