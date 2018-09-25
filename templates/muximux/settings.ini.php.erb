@@ -30,7 +30,7 @@ last_check = 1537392448
 
 [Sonarr]
 name = "Sonarr"
-url = "http://<%=  @ipaddress %>:/"
+url = "http://<%=  @ipaddress %>:<%= scope['::mediacenter::params::sonarr_port'] %>/"
 scale = 1
 icon = "muximux-sonarr"
 color = "#35c5f4"
@@ -38,24 +38,15 @@ enabled = "true"
 
 [Jackett]
 name = "Jackett"
-url = "https://<%=  @ipaddress %>:9117"
+url = "https://<%=  @ipaddress %>:<%= scope['::mediacenter::params::jackett_port'] %>"
 scale = 1
 icon = "muximux-nzbhydra"
 color = "#108f34"
 enabled = "true"
 
-[deluge]
-name = "Deluge"
-url = "http://deluge-torrent.org/"
-scale = 1
-icon = "muximux-deluge"
-color = "#304663"
-enabled = "true"
-dd = "true"
-
 [radarr]
 name = "Radarr"
-url = "http://<%=  @ipaddress %>:7878"
+url = "http://<%=  @ipaddress %>:<%= scope['::mediacenter::params::radarr_port'] %>"
 scale = 1
 icon = "muximux-sonarr"
 color = ""
