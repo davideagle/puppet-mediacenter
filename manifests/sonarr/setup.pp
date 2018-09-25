@@ -45,7 +45,7 @@ class mediacenter::sonarr::setup(
     mode    => '0644',
     content => template("${module_name}/sonarr/config.xml.erb"),
     require => File['/opt/sonarr/config'],
-    norify  => Docker::Run['sonarr']
+    notify  => Docker::Run['sonarr']
   }
 
 }
