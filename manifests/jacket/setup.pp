@@ -13,7 +13,7 @@ class mediacenter::jacket::setup(
   String                 $omdb_api_url         = '',
   String                 $proxy_url            = '',
   Integer                $proxy_type           = 0,
-  String                 $proxy_port           = 'Null',
+  String                 $proxy_port           = 'null',
   String                 $proxy_username       = '',
   String                 $proxy_password       = '',
   Boolean                $proxy_is_anonymous   = true,
@@ -62,6 +62,7 @@ class mediacenter::jacket::setup(
     mode    => '0644',
     content => template("${module_name}/jackett/ServerConfig.json.erb"),
     require => File['/opt/jackett/config/Jackett'],
+    notify  => Docker::Run['jackett']
   }
 
   file { '/opt/jackett/config/Jackett/Indexers':
