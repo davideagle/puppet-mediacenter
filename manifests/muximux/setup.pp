@@ -1,4 +1,4 @@
-class mediacenter::muximux::setup {
+class mediacenter::muximux::setup inherits mediacenter::params {
 
   include ::docker
 
