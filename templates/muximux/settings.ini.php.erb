@@ -64,7 +64,7 @@ dd = "true"
 
 [transmission]
 name = "Transmission"
-url = "http://<%=  @ipaddress %>:<%= scope.lookupvar("::mediacenter::transmission::setup::rpc_port") %>"
+url = "http://<%=  @ipaddress %>:<%= scope.lookupvar("::mediacenter::parms::transmission_rpc_port") %>"
 scale = 1
 icon = "muximux-utorrent"
 color = "#304663"
