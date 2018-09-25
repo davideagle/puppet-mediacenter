@@ -48,6 +48,7 @@ class mediacenter::radarr::setup(
     mode    => '0644',
     content => template("${module_name}/radarr/config.xml.erb"),
     require => File['/opt/radarr/config'],
+    notify  => Docker::Run['radarr']
   }
 
 }
