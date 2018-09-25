@@ -33,7 +33,6 @@ class mediacenter::muximux::setup inherits mediacenter::params {
     mode    => '0644',
     content => template("${module_name}/muximux/settings.ini.php.erb"),
     require => File['/opt/muximux/config'],
-    notify  => Docker::Run['muximux']
   }
 
 }
